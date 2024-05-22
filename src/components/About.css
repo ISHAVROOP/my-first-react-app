@@ -1,0 +1,28 @@
+.accordion-item {
+    background-color: transparent;
+    border: none;
+    margin-bottom: 16px;
+  }
+  
+  .accordion-header .accordion-button {
+    
+    background: linear-gradient(45deg, #6a11cb 50%,#2575fc 50%);
+    
+    color: #fff;
+    border-radius: 20px;
+    padding: 15px 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .accordion-header .accordion-button:hover {
+    background-color: #555;
+  }
+  
+  .accordion-body {
+    background-color: #f8f9fa;
+    border-radius: 20px;
+    padding: 20px;
+  }
+
+

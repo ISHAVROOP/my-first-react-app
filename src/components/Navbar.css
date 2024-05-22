@@ -1,0 +1,325 @@
+
+/* General Styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+
+}
+
+/* Navbar Styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  background: linear-gradient(45deg, #6a11cb, #2575fc);
+  color: #fff;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  border-radius: 20px;
+  margin: 2rem;
+}
+
+.navbar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.1);
+  z-index: -1;
+  backdrop-filter: blur(5px);
+}
+
+.navbar::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 70%);
+  opacity: 0.5;
+  z-index: -1;
+  animation: glow 10s ease-in-out infinite;
+}
+
+.navbar-brand {
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-brand::before {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease-in-out;
+}
+
+.navbar-brand:hover::before {
+  transform: scaleX(1);
+}
+
+.navbar-brand::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0.1) 100%);
+  transform: translateX(-100%);
+  animation: brandAnimation 3s infinite linear;
+}
+
+.navbar-brand-icon {
+  margin-right: 0.5rem;
+  font-size: 2rem;
+  animation: iconAnimation 3s infinite;
+}
+
+.navbar-nav {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  margin-left: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.nav-link::before {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease-in-out;
+}
+
+.nav-link:hover::before {
+  transform: scaleX(1);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0.1) 100%);
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.nav-link:hover::after {
+  animation: linkAnimation 3s infinite linear;
+}
+
+.nav-link-icon {
+  margin-left: 0.5rem;
+  font-size: 1.4rem;
+  animation: iconAnimation 3s infinite;
+}
+
+.navbar__toggler {
+  display: none;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  padding: 0;
+}
+
+.navbar__toggler-icon {
+  display: block;
+  width: 30px;
+  height: 2px;
+  background-color: #fff;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+}
+
+.navbar__toggler-icon::before,
+.navbar__toggler-icon::after {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 2px;
+  background-color: #fff;
+  left: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.navbar__toggler-icon::before {
+  top: -8px;
+}
+
+.navbar__toggler-icon::after {
+  bottom: -8px;
+}
+
+.navbar__toggler.active .navbar__toggler-icon {
+  transform: rotate(45deg);
+}
+
+.navbar__toggler.active .navbar__toggler-icon::before {
+  top: 0;
+  transform: rotate(90deg);
+}
+
+.navbar__toggler.active .navbar__toggler-icon::after {
+  bottom: 0;
+  transform: rotate(90deg);
+}
+@media (max-width: 768px) {
+  .navbar__nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+    padding: 1rem 0;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .navbar__nav.show {
+    transform: translateY(0);
+  }
+
+  .navbar__nav-item {
+    margin-left: 0;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .navbar__toggler {
+    display: block;
+  }
+}
+
+/* Animations */
+@keyframes glow {
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+
+
+@keyframes linkAnimation {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+
+    
+  }
+  .custom-switch-container {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .custom-switch-input {
+    display: none;
+  }
+  
+  .custom-switch-inner,
+  .custom-switch-switch {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  
+  .custom-switch-inner {
+    background: linear-gradient(90deg, #00ffa6, #e52e71);
+    border-radius: 20px;
+    transition: background 0.4s;
+  }
+  
+  .custom-switch-switch {
+    background:linear-gradient(90deg, #ff8a00, #e52e71);
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    box-shadow: 0 2px 5px rgb(237, 216, 216);
+    transition: transform 0.4s;
+  }
+  
+  .custom-switch-switch::before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 20px;
+    height: 20px;
+    background-color: rgb(0, 0, 0);
+    border-radius: 50%;
+    transition: transform 0.4s;
+  }
+  
+  .custom-switch-input:checked + .custom-switch-label .custom-switch-inner {
+    background: linear-gradient(90deg, #5eff5e, #35b30b);
+  }
+  
+  .custom-switch-input:checked + .custom-switch-label .custom-switch-switch {
+    transform: translateX(25px);
+  }
+  
+  .custom-switch-input:checked + .custom-switch-label .custom-switch-switch::before {
+    transform: translateX(5px);
+  }
+  

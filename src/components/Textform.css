@@ -1,0 +1,171 @@
+form {
+    background-color:#fff;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+    max-width: 100%; /* Set a maximum width for larger screens */
+    margin: 0 auto; /* Center the form horizontally */
+    position: relative;
+    overflow: hidden;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+  }
+  
+  form::before {
+    content: "";
+    position: absolute;
+    top: -100px;
+    left: -100px;
+    width: 3000px;
+    height: 3000px;
+    background: linear-gradient(45deg, #6a11cb, #2575fc);
+    border-radius: 50%;
+    animation: float 10s infinite linear;
+    z-index: -1;
+  }
+  
+  @keyframes float {
+    0% {
+      transform: translate(0, 0) rotate(0deg);
+    }
+    50% {
+      transform: translate(100px, 100px) rotate(180deg);
+    }
+    100% {
+      transform: translate(0, 0) rotate(360deg);
+    }
+  }
+  
+  .form-group {
+    position: relative;
+  }
+
+
+/* For light mode */
+.bg-dark textarea::placeholder {
+  color: rgb(21, 21, 21);
+}
+
+/* For dark mode */
+.bg-light  textarea::placeholder {
+  color: white;
+}
+
+
+  label {
+    position: absolute;
+    top: -19px;
+    left: 10px;
+
+    padding: 0 5px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+  }
+  
+  textarea {
+    border: 2px solid #007bff;
+    border-radius: 5px;
+    padding: 10px;
+    transition: all 0.3s ease;
+    width: 100%; /* Make the textarea take full width */
+    box-sizing: border-box; /* Include padding and border in the element's total width */
+  }
+  
+  textarea:focus {
+    outline: none;
+    border-color: #0056b3;
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.3);
+  }
+  
+  textarea:focus + label {
+    color: #0056b3;
+  }
+  
+ button {
+    background: linear-gradient(45deg, #6a11cb, #2575fc);
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    margin: 10px 5px 0 0; /* Add spacing between buttons */
+  }
+  
+ button::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transition: all 0.5s ease;
+  }
+  
+  button:hover::before {
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+  }
+  
+  textarea {
+    border-color: #80bdff; /* Change the color as needed */
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); /* Optional: Add a box shadow for better visibility */
+  }
+  
+  /* Media queries for responsiveness */
+  @media (max-width: 600px) {
+    form {
+      padding: 20px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    form {
+      padding: 15px;
+    }
+  
+    .tf button {
+      display: block;
+      width: 100%;
+      margin: 10px 0 0 0; /* Remove horizontal margin and add top margin */
+    }
+  }
+
+
+  .text-primary {
+    color: #007bff;
+  }
+  
+  .my-2 {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .summary-container {
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(92, 76, 235, 0.833);
+    
+    text-align: center;
+    margin-top: 2rem;
+  }
+  
+  .summary-container h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+
+  }
+  
+  .summary-container p {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  } 
+  
