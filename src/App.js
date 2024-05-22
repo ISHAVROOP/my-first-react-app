@@ -32,7 +32,8 @@ const setalert=(message,type)=>{
 
   return (
     <>
-      <Navbar title="Text Magic" l1="Home" l2="About" l3="Contact" l4={`ENABLE ${mode.toUpperCase()} MODE`} mode={mode} togglemode={toggleMode} />
+
+      <Navbar title="Text Magic" mode={mode} togglemode={toggleMode} />
       <Alert alert={al}/>
       <div className="container my-5">
         <Textform setalert={setalert} exa="Enter text to analyze" mode={mode} togglemode={toggleMode} />

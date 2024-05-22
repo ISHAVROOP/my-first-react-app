@@ -1,17 +1,17 @@
 
 /* General Styles */
+/* General Styles */
 body {
   font-family: 'Poppins', sans-serif;
   color: #fff;
-
 }
 
 /* Navbar Styles */
 .navbar {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  padding: 1.5rem 2rem;
+  padding: 1rem 1.5rem;
   background: linear-gradient(45deg, #6a11cb, #2575fc);
   color: #fff;
   position: relative;
@@ -19,9 +19,33 @@ body {
   overflow: hidden;
   backdrop-filter: blur(10px);
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-  border-radius: 20px;
-  margin: 2rem;
+  border-radius: 40px;
+  width: 95%;
+  margin: 1rem auto;
+  height: auto;
 }
+
+/* Brand on top for mobile and tablet */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column-reverse;
+  }
+
+  .navbar-brand {
+    margin-bottom: 2rem;
+    margin-left: 3rem;
+  }
+}
+
+/* Navbar Responsive Styles */
+@media (min-width: 769px) {
+  .navbar {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
 
 .navbar::before {
   content: '';
@@ -265,61 +289,156 @@ body {
 
     
   }
+
+/* Toggle Switch Styles */
+.custom-switch-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80px;
+  margin-top: 20px;
+  margin-bottom: 0;
+}
+
+/* Toggle Switch Responsive Styles */
+@media (max-width: 768px) {
   .custom-switch-container {
-    position: relative;
-    display: inline-block;
+    height: 60px;
+    margin-top: 10px;
   }
-  
-  .custom-switch-input {
-    display: none;
+
+  .custom-switch-label {
+    width: 60px;
+    height: 60px;
   }
-  
+
   .custom-switch-inner,
   .custom-switch-switch {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    width: 40px;
+    height: 40px;
   }
-  
-  .custom-switch-inner {
-    background: linear-gradient(90deg, #00ffa6, #e52e71);
-    border-radius: 20px;
-    transition: background 0.4s;
+
+  .custom-switch-inner i,
+  .custom-switch-switch i {
+    font-size: 20px;
   }
-  
+}
+
+@media (max-width: 480px) {
+  .custom-switch-container {
+    height: 50px;
+  }
+
+  .custom-switch-label {
+    width: 50px;
+    height: 50px;
+  }
+
+  .custom-switch-inner,
   .custom-switch-switch {
-    background:linear-gradient(90deg, #ff8a00, #e52e71);
-    border-radius: 50%;
     width: 30px;
     height: 30px;
-    box-shadow: 0 2px 5px rgb(237, 216, 216);
-    transition: transform 0.4s;
   }
-  
-  .custom-switch-switch::before {
-    content: '';
-    position: absolute;
-    top: 5px;
-    left: 5px;
-    width: 20px;
-    height: 20px;
-    background-color: rgb(0, 0, 0);
-    border-radius: 50%;
-    transition: transform 0.4s;
+
+  .custom-switch-inner i,
+  .custom-switch-switch i {
+    font-size: 16px;
   }
-  
-  .custom-switch-input:checked + .custom-switch-label .custom-switch-inner {
-    background: linear-gradient(90deg, #5eff5e, #35b30b);
-  }
-  
-  .custom-switch-input:checked + .custom-switch-label .custom-switch-switch {
-    transform: translateX(25px);
-  }
-  
-  .custom-switch-input:checked + .custom-switch-label .custom-switch-switch::before {
-    transform: translateX(5px);
-  }
-  
+}
+
+/* Input */
+.custom-switch-input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* Label */
+.custom-switch-label {
+  position: relative;
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(90deg, #ffd89b, #19547b);
+  border-radius: 40px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: background 0.5s ease;
+  overflow: hidden;
+}
+
+/* Inner Circle */
+.custom-switch-inner {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 60px;
+  height: 60px;
+  background: radial-gradient(circle at 30px 30px, #fff4d9, #ffebc1);
+  border-radius: 100%;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.5s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Switch */
+.custom-switch-switch {
+  position: absolute;
+  top: 10px;
+  left: 92px;
+  width: 60px;
+  height: 60px;
+  background: radial-gradient(circle at 30px 30px, #274c77, #193c5d);
+  border-radius: 50%;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  transform: translateX(0);
+  transition: transform 0.5s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Icons */
+.custom-switch-inner i,
+.custom-switch-switch i {
+  font-size: 30px;
+  transition: opacity 0.5s ease;
+}
+
+.custom-switch-inner i {
+  color: #ffa500;
+  opacity: 1;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.custom-switch-switch i {
+  color: #d9d9d9;
+  opacity: 0;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Checked State */
+.custom-switch-input:checked + .custom-switch-label {
+  background: linear-gradient(90deg, #19547b, #ffd89b);
+}
+
+.custom-switch-input:checked + .custom-switch-label .custom-switch-inner {
+  transform: translateX(80px);
+}
+
+.custom-switch-input:checked + .custom-switch-label .custom-switch-inner i {
+  opacity: 0;
+}
+
+.custom-switch-input:checked + .custom-switch-label .custom-switch-switch {
+  transform: translateX(-80px);
+}
+
+.custom-switch-input:checked + .custom-switch-label .custom-switch-switch i {
+  opacity: 1;
+}
+
+ 

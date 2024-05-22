@@ -11,6 +11,10 @@ form {
     perspective: 1000px;
   }
   
+  .tf-btn {
+    width: 100%;
+  }
+  
   form::before {
     content: "";
     position: absolute;
@@ -169,3 +173,4 @@ form {
     margin-bottom: 0.5rem;
   } 
   
+ 
